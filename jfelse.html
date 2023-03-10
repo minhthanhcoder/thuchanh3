@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // bài 1
+        var number = parseInt(prompt('Nhập vào số nguyên'));
+        if (number % 2 == 0) {
+            console.log('Đây là số nguyên chia hết cho 2')
+        }
+        else {
+            console.log('Đây là số nguyên không chia hết cho 2');
+        }
+        //bài 2
+        var year = parseInt(prompt('Nhập vào năm muốn kiểm tra'));
+        if (year % 4 == 0 || year % 100 == 0 && year % 400 == 0) {
+            console.log('Đây là năm nhuận');
+        }
+        else {
+            console.log("Đây không phải năm nhuận");
+        }
+
+        //bài 3
+        var giaXe = parseInt(prompt('Nhập vào giá xe bus'));
+        var age = parseInt(prompt('Nhập vào số tuổi của quý khách'));
+
+        if (6 < age <= 18) {
+            console.log('Giá vé của quý khách là:', giaXe / 2);
+        }
+        else if (18 < age && age <= 55) {
+            console.log('Giá  vé của quý khách là:', giaXe);
+        }
+        else {
+            console.log('Miễn phí')
+        }
+
+        //bài 4
+        var dienCu = parseFloat(prompt('Nhập vào số điện cũ'));
+        var dienMoi = parseFloat(prompt('Nhập vào số điện mới'));
+        soDien = dienMoi - dienCu;
+        if (soDien <= 50) {
+            sttt = soDien * 700 + 10000;
+        }
+        else if (50 < soDien && soDien <= 100) {
+            sttt = 50 * 700 + (soDien - 50) * 900 + 10000;
+        }
+        else if (100 < soDien && soDien <= 150) {
+            sttt = 50 * 700 + 50 * 900 + (soDien - 100) * 1100 + 10000;
+        }
+        else {
+            sttt = 50 * 700 + 50 * 900 + 50 * 1100 + (soDien - 150) * 1300 + 10000;
+        }
+        console.log('Tiền điện của bạn là:', sttt + ' ' + 'VND')
+
+        //bài 5
+        var a = parseInt(prompt('Nhập vào cạnh số 1'));
+        var b = parseInt(prompt('Nhập vào cạnh số 2'));
+        var c = parseInt(prompt('Nhập vào cạnh số 3'));
+
+        if (a + b > c || a + c > b || b + c > a) {
+            if (a * a == b * b + c * c || b * b == a * a + c * c || c * c == a * a + b * b) {
+                console.log('Đây là giác vuông')
+            }
+            else if (a == b && b == c) {
+                console.log('Đây là tam giác đều')
+            }
+            else if (a == b || a == c || c == b) {
+                console.log('Đây là tam giác cân')
+            }
+            else {
+                console.log('Đây là tam giác thường')
+            }
+        }
+        else {
+            console.log('Đây không phải một tam giác')
+        }
+
+        //bài 6
+        var month = parseInt(prompt('Nhập tháng'));
+        var year = parseInt(prompt('Nhập Năm'));
+
+        switch (0 < month < 13) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12: soNgay = 31
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11: soNgay = 30
+            break;
+            default:
+                if (year % 4 == 0 || year % 100 == 0 && year % 400 == 0) {
+                    soNgay = 29
+                }
+                else {
+                    soNgay = 28
+                }
+                break;
+        }
+        console.log('Số ngày trong tháng là:', soNgay);
+
+        //Bài 7 phương trình bậc 1
+        var a, b, x;
+        a = parseInt(prompt('nhập vào a'));
+        b = parseInt(prompt('nhập vào b'));
+        if (a == 0) {
+            if (b == 0) {
+                console.log('Phương trình vô số nghiệm')
+            }
+            else {
+                console.log('Phương trình vô nghiệm')
+            }
+        }
+        else if (b == 0) {
+            console.log('x có nghiệm là:', x = 0)
+        }
+        else {
+            console.log('x có nghiệm là:', x = -b / a);
+        }
+
+        //bài 8 phuong trình bậc 2
+        //ax2+bx+c = 0 a#0
+        //delta = b2 - 4ac  delta > 0 x1 = (-b +math.sqrt(delta) )/2a x2 = (-b -math.sqrt(delta) )/2a
+        var a, b, c
+        a = parseInt(prompt('nhập vào a'));
+        b = parseInt(prompt('nhập vào b'));
+        c = parseInt(prompt('nhập vào c'));
+        var x1, x2;
+        delta = b * b - 4 * a * c;
+
+        if (delta < 0) {
+            console.log('Phương trình vô  nghiệm')
+        }
+        else if (delta == 0) {
+            x1 == x2 == -b / (2 * a)
+            console.log('Phương trình có hai nghiệm kép:',+'X1 là:', x1, +'X2 là:', x2)
+        }
+        else {
+            x1 = (-b - Math.sqrt(delta)) / (2 * a);
+            x2 = (-b + Math.sqrt(delta)) / (2 * a);
+            console.log('Phương trình có hai nghiệm phân biệt: x1 =',x1, 'x2 là:',x2 )
+        }
+
+// bài 9  Nhập vào điểm HTML, CSS, Javascript của học viên Rikkei Academy, tính
+// điểm trung bình của học viên và in ra xếp loại học lực của học viên:
+// 	- ĐTB >=8: Giỏi
+// 	- 8> ĐTB >=6.5: Khá
+// 	- 6.5>ĐTB>=3.5: Yếu
+// 	- 3.5>ĐTB: Kém
+        var diemHtlm = parseFloat(prompt('Nhập điểm HTML'))
+        var diemCss = parseFloat(prompt('Nhập điểm CSS'))
+        var diemJs = parseFloat(prompt('Nhập điểm Javascript'))
+
+        diemTb = (diemHtlm  + diemCss + diemJs) /3 ;
+
+        if (diemTb >= 8) {
+            console.log('Xếp loại: Giỏi')
+        }
+        else if (diemTb >= 6.5) {
+            console.log('Xếp loại: Khá')
+        }
+        else if (diemTb >= 3.5) {
+            console.log('Xếp loại: Yếu')
+        }
+        else {
+            console.log('Xếp loại: Kém')
+
+        }
+    </script>
+</body>
+
+</html>
